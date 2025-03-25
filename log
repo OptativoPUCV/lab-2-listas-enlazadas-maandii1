@@ -24,3 +24,8 @@ list.c:40:5: error: suggest parentheses around assignment used as truth value [-
 cc1.exe: all warnings being treated as errors
 Compilation failed
 1cb99af
+Tue, Mar 25, 2025  1:06:40 PM: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+bb85816
