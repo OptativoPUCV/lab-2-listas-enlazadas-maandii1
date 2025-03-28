@@ -121,3 +121,17 @@ list.c:83:5: error: suggest parentheses around assignment used as truth value [-
 cc1.exe: all warnings being treated as errors
 Compilation failed
 c827a20
+Fri, Mar 28, 2025 10:56:01 AM: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function 'pushCurrent':
+list.c:83:29: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     if (list->current->next =! NULL)
+                             ^
+list.c:83:5: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+     if (list->current->next =! NULL)
+     ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+d2ea189
