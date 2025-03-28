@@ -60,8 +60,9 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-    
-    return NULL;
+    Node* aux= list->current;
+    list->current = aux;
+    return aux->prev->data;
 }
 
 void pushFront(List * list, void * data) {
