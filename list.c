@@ -101,10 +101,16 @@ void * popCurrent(List * list) {
     if (list->current == NULL) return NULL;
     Node* aux = list->current;
     Node* izq = list->current->prev;
-    Node* der = list->current->next;
-    izq->next = der;
-    if (der == NULL) der->prev = izq;
-    list->current = der;
+    if (list->current->next != NULL) {
+        Node* der = list->current->next;
+        izq->next = der;
+        der->prev = izq;
+        list->current = der;
+    }
+    else {
+        list->current = NULL;
+        izq->next = NULL;
+    }
     return aux->data;
 }
 
