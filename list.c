@@ -100,18 +100,23 @@ void * popBack(List * list) {
 void * popCurrent(List * list) {
     if (list->current == NULL) return NULL;
     Node* aux = list->current;
+    void *data = aux->data;
     Node* izq = list->current->prev;
+    Node* der = list->current->next;
+
+    if (list->current->prev != NULL) izq->next = der;
+    else list->head = der;
+
     if (list->current->next != NULL) {
-        Node* der = list->current->next;
-        izq->next = der;
         der->prev = izq;
         list->current = der;
     }
     else {
+        list->tail = izq;
         list->current = NULL;
-        izq->next = NULL;
     }
-    return aux->data;
+    free(aux);
+    return data;
 }
 
 void cleanList(List * list) {
