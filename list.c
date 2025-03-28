@@ -98,8 +98,14 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-
-    return NULL;
+    if (list->current == NULL) return NULL;
+    Node* aux = list->current;
+    Node* izq = list->current->prev;
+    Node* der = list->current->next;
+    izq->next = der;
+    der->prev = izq;
+    list->current = der;
+    return aux->data;
 }
 
 void cleanList(List * list) {
