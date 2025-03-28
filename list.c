@@ -103,7 +103,7 @@ void * popCurrent(List * list) {
     Node* izq = list->current->prev;
     Node* der = list->current->next;
     izq->next = der;
-    der->prev = izq;
+    if (der == NULL) der->prev = izq;
     list->current = der;
     return aux->data;
 }
