@@ -80,7 +80,9 @@ void pushCurrent(List * list, void * data) {
     NewNode->prev = list->current;
     NewNode->next = list->current->next;
     NewNode->prev->next = NewNode;
-    NewNode->next->prev = NewNode;
+    if (list->current =! list->tail) 
+        NewNode->next->prev = NewNode;
+    else list->tail = NewNode;
 
 }
 

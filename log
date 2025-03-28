@@ -107,3 +107,17 @@ Fri, Mar 28, 2025 10:44:24 AM:
  1 file changed, 10 insertions(+)
  tests:  0|0
 a84e09b
+Fri, Mar 28, 2025 10:55:18 AM: 
+ list.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:0:
+list.c: In function 'pushCurrent':
+list.c:83:23: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     if (list->current =! list->tail)
+                       ^
+list.c:83:5: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+     if (list->current =! list->tail)
+     ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+c827a20
